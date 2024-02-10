@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../constants/app_theme.dart';
@@ -63,22 +64,68 @@ class CardList extends StatelessWidget {
                 ),
               ),
               const Gap(10),
-              Text(title, style: AppTheme.appBarBlackTitle),
+              Text(
+                title,
+                style: GoogleFonts.poppins(
+                  textStyle: AppTheme.appBarBlackTitle,
+                ),
+              ),
               Text(
                 subtitle,
-                style: const TextStyle(
-                  color: smallTextColor,
-                  fontSize: 16,
+                style: GoogleFonts.poppins(
+                  textStyle: AppTheme.smallText,
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('\$$price', style: AppTheme.priceTextMain),
+                  Text(
+                    '\$$price',
+                    style: GoogleFonts.poppins(
+                      textStyle: AppTheme.priceTextMain,
+                    ),
+                  ),
                   IconButton(
                     onPressed: () {},
-                    icon: const Icon(Iconsax.add_circle),
-                  )
+                    icon: DecoratedBox(
+                      decoration: const BoxDecoration(
+                        // Remove other shadow properties
+                        boxShadow: [],
+                      ),
+                      child: Stack(
+                        children: [
+                          // Original icon without shadow
+                          // Shadow positioned at the bottom
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 5,
+                            child: Container(
+                              height: 30,
+                              width: 30, // Adjust height for shadow size
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.6),
+                                    blurRadius: 4.0,
+                                    spreadRadius: 2.0,
+                                    // Offset to position shadow only at bottom
+                                    offset: const Offset(5.0, 2.0),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          const Icon(
+                            Iconsax.add_circle5,
+                            size: 40,
+                            color: textColor,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               )
             ],

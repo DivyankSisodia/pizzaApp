@@ -1,10 +1,12 @@
-import 'package:apppizza/constants/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../constants/app_theme.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
-    super.key,
+    super.key, required List items,
   });
 
   @override
@@ -14,9 +16,8 @@ class SearchField extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search ...',
-          hintStyle: const TextStyle(
-            color: smallTextColor,
-            fontSize: 16,
+          hintStyle: GoogleFonts.poppins(
+            textStyle: AppTheme.smallText,
           ),
           prefixIcon: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 40.0),

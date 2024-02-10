@@ -1,5 +1,6 @@
 import 'package:apppizza/constants/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class BottonNavBar extends StatefulWidget {
@@ -32,30 +33,38 @@ class _BottonNavBarState extends State<BottonNavBar> {
           onTabChange: (index) {
             debugPrint(index.toString());
           },
-          tabs: const [
+          tabs: [
             GButton(
-              margin: EdgeInsets.only(right: 2, top: 7, bottom: 7),
+              margin: const EdgeInsets.only(right: 2, top: 7, bottom: 7),
               icon: Icons.home_filled,
               text: 'Home',
-              textStyle: AppTheme.buttonthemesmall,
+              textStyle: GoogleFonts.poppins(
+                textStyle: AppTheme.buttonthemesmall,
+              ),
             ),
             GButton(
-              margin: EdgeInsets.only(right: 2, top: 7, bottom: 7),
+              margin: const EdgeInsets.only(right: 2, top: 7, bottom: 7),
               icon: Icons.menu,
               text: 'Search',
-              textStyle: AppTheme.buttonthemesmall,
+              textStyle: GoogleFonts.poppins(
+                textStyle: AppTheme.buttonthemesmall,
+              ),
             ),
             GButton(
-              margin: EdgeInsets.only(right: 2, top: 7, bottom: 7),
+              margin: const EdgeInsets.only(right: 2, top: 7, bottom: 7),
               icon: Icons.shopping_cart,
               text: 'Cart',
-              textStyle: AppTheme.buttonthemesmall,
+              textStyle: GoogleFonts.poppins(
+                textStyle: AppTheme.buttonthemesmall,
+              ),
             ),
             GButton(
-              margin: EdgeInsets.only(right: 2, top: 7, bottom: 7),
+              margin: const EdgeInsets.only(right: 2, top: 7, bottom: 7),
               icon: Icons.person,
               text: 'Profile',
-              textStyle: AppTheme.buttonthemesmall,
+              textStyle: GoogleFonts.poppins(
+                textStyle: AppTheme.buttonthemesmall,
+              ),
             ),
           ],
         ),

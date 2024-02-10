@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   gap: ^3.0.1
+  google_fonts: ^6.1.0
   google_nav_bar: ^5.0.6
   iconsax: ^0.0.8
 

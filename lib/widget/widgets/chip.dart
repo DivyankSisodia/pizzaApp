@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../constants/app_theme.dart';
 
 class ChipWidget extends StatelessWidget {
   const ChipWidget({
@@ -21,9 +24,11 @@ class ChipWidget extends StatelessWidget {
     return Chip(
       label: Text(
         label,
-        style: TextStyle(
-          color: textColor,
-          fontWeight: FontWeight.bold,
+        style: GoogleFonts.poppins(
+          textStyle: AppTheme.smallText.copyWith(
+            color: textColor,
+            fontWeight: fontWeight,
+          ),
         ),
       ),
       backgroundColor: color,

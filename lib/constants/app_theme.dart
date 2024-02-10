@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const primaryColor = Color(0xFFB28D60);
 const secondaryColor = Color.fromARGB(255, 252, 240, 227);
 const backgroundColor = Color.fromARGB(255, 255, 255, 255);
-const textColor = Color.fromARGB(255, 40, 31, 30);
+const textColor = Color.fromARGB(255, 40, 34, 33);
 const tertiaryColor = Color(0xFFD8AA75);
 const smallTextColor = Color.fromARGB(255, 123, 123, 123);
 
@@ -26,7 +27,7 @@ class AppTheme {
   );
   static const smallText = TextStyle(
     color: smallTextColor,
-    fontSize: 15,
+    fontSize: 16,
   );
   static const smallBlackText = TextStyle(
     color: textColor,
@@ -48,6 +49,7 @@ class AppTheme {
   );
   static const buttonthememedium = TextStyle(
     color: backgroundColor,
+    fontWeight: FontWeight.bold,
     fontSize: 22,
   );
   static const buttonthemesmall = TextStyle(

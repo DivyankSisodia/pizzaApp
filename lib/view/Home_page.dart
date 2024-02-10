@@ -5,6 +5,7 @@ import 'package:apppizza/widget/cart_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../widget/bottom_nav.dart';
 import '../widget/categories.dart';
 import '../widget/widgets/search_field.dart';
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     final List<dynamic> data = json.decode(response);
     setState(() {
       _items = data;
-      print('.. number of items: ${_items.length}');
+      debugPrint('.. number of items: ${_items.length}');
     });
   }
 
@@ -49,11 +50,21 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: backgroundColor,
         centerTitle: true,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Pizza', style: AppTheme.appBarBlackTitle),
-            Text('corner', style: AppTheme.appBarColorTitle),
+            Text(
+              'Pizza',
+              style: GoogleFonts.poppins(
+                textStyle: AppTheme.appBarBlackTitle,
+              ),
+            ),
+            Text(
+              'corner',
+              style: GoogleFonts.poppins(
+                textStyle: AppTheme.appBarColorTitle,
+              ),
+            ),
           ],
         ),
         actions: [
@@ -88,7 +99,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               // search bar
-              const SearchField(),
+              SearchField(items: _items), // Pass _items list here
               const Gap(30),
               // categories
               const Categories(),
@@ -97,8 +108,8 @@ class _HomePageState extends State<HomePage> {
               Cartlist(items: _items),
               // popularItems
               const Gap(25),
-              const Padding(
-                padding: EdgeInsets.symmetric(
+              Padding(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
                 ),
                 child: Row(
@@ -106,13 +117,14 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       'Popular Items 🔥',
-                      style: AppTheme.appBarBlackTitle,
+                      style: GoogleFonts.poppins(
+                        textStyle: AppTheme.appBarBlackTitle,
+                      ),
                     ),
                     Text(
                       'View all',
-                      style: TextStyle(
-                        color: smallTextColor,
-                        fontSize: 15,
+                      style: GoogleFonts.poppins(
+                        textStyle: AppTheme.smallText,
                       ),
                     ),
                   ],

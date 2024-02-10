@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax/iconsax.dart';
 import '../widget/widgets/rating.dart';
 import '../constants/app_theme.dart';
 
@@ -41,7 +43,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 debugPrint('Search');
               },
               icon: const Icon(
-                Icons.search,
+                Iconsax.shop,
                 size: 25,
                 color: textColor,
               ),
@@ -55,7 +57,7 @@ class _DetailsPageState extends State<DetailsPage> {
             flex: 4,
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+                  const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
@@ -84,7 +86,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       height: 140,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        border: Border.all(color: textColor, width: 0.2),
+                        border: Border.all(color: textColor, width: 0.6),
                         color: secondaryColor,
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
@@ -100,11 +102,15 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: [
                                 Text(
                                   widget.name,
-                                  style: AppTheme.appBarBlackTitleDetail,
+                                  style: GoogleFonts.poppins(
+                                    textStyle: AppTheme.appBarBlackTitleDetail,
+                                  ),
                                 ),
                                 Text(
                                   '\$${widget.price.toStringAsFixed(2)}',
-                                  style: AppTheme.priceTextDetail,
+                                  style: GoogleFonts.poppins(
+                                    textStyle: AppTheme.priceTextDetail,
+                                  ),
                                 ),
                               ],
                             ),
@@ -114,7 +120,9 @@ class _DetailsPageState extends State<DetailsPage> {
                                 horizontal: 30.0, vertical: 0.0),
                             child: Text(
                               widget.shortDescription,
-                              style: AppTheme.smallText,
+                              style: GoogleFonts.poppins(
+                                textStyle: AppTheme.smallText,
+                              ),
                             ),
                           ),
                           Padding(
@@ -138,9 +146,11 @@ class _DetailsPageState extends State<DetailsPage> {
                                   onPressed: () {
                                     debugPrint('Add to cart');
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     'Add to cart',
-                                    style: AppTheme.smallBlackText,
+                                    style: GoogleFonts.poppins(
+                                      textStyle: AppTheme.smallBlackText,
+                                    ),
                                   ),
                                 )
                               ],
@@ -156,8 +166,12 @@ class _DetailsPageState extends State<DetailsPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Description',
-                            style: AppTheme.appBarBlackTitle),
+                        Text(
+                          'Description',
+                          style: GoogleFonts.poppins(
+                            textStyle: AppTheme.appBarBlackTitle,
+                          ),
+                        ),
                         const Gap(10),
                         GestureDetector(
                           onTap: () {
@@ -169,7 +183,9 @@ class _DetailsPageState extends State<DetailsPage> {
                             _showFullDescription
                                 ? widget.longDescription
                                 : '${widget.longDescription.substring(0, 150)}... Read more',
-                            style: const TextStyle(fontSize: 16),
+                            style: GoogleFonts.poppins(
+                              textStyle: AppTheme.smallBlackText,
+                            ),
                           ),
                         ),
                       ],
@@ -189,10 +205,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           color: textColor,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             'Order now',
-                            style: AppTheme.buttonthememedium,
+                            style: GoogleFonts.poppins(
+                              textStyle: AppTheme.buttonthememedium,
+                            ),
                           ),
                         ),
                       ),
