@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/app_theme.dart';
-
 class ChipWidget extends StatelessWidget {
   const ChipWidget({
     super.key,

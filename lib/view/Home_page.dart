@@ -1,15 +1,16 @@
 // ignore_for_file: file_names
+import 'dart:convert';
+import 'dart:math';
 
 import 'package:apppizza/constants/app_theme.dart';
-import 'package:apppizza/widget/widgets/chip.dart';
+import 'package:apppizza/widget/cart_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:iconsax/iconsax.dart';
-
 import '../widget/bottom_nav.dart';
-import '../widget/card_list.dart';
+import '../widget/widgets/card_list.dart';
 import '../widget/categories.dart';
-import '../widget/search_field.dart';
+import '../widget/widgets/search_field.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +20,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List _items = [];
+
+  @override
+  void initState() {
+    super.initState();
+    readJson(); // Call readJson function when widget is initialized
+  }
+
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.loadString('assets/json/pizza.json');
+    final List<dynamic> data = json.decode(response);
+    setState(() {
+      _items = data;
+      print('.. number of items: ${_items.length}');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,25 +97,30 @@ class _HomePageState extends State<HomePage> {
               const Categories(),
               // pizzaGallery
               const Gap(30),
-              Container(
-                height: 430,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+              Cartlist(items: _items),
+              // popularItems
+              const Gap(25),
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
                 ),
-                child: ListView.builder(
-                  itemCount: 3,
-                  itemBuilder: (context, index) {
-                    return const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
-                      child: CardList(),
-                    );
-                  },
-                  scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Popular Items 🔥',
+                      style: AppTheme.appBarBlackTitle,
+                    ),
+                    Text(
+                      'View all',
+                      style: TextStyle(
+                        color: smallTextColor,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
                 ),
               )
-
-              // popularItems
             ],
           ),
         ),
