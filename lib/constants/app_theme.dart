@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 const primaryColor = Color(0xFFB28D60);
 const secondaryColor = Color.fromARGB(255, 252, 240, 227);
 const backgroundColor = Color.fromARGB(255, 255, 255, 255);
-const textColor = Color(0xFF2A1F1E);
+const textColor = Color.fromARGB(255, 40, 31, 30);
 const tertiaryColor = Color(0xFFD8AA75);
 const smallTextColor = Color.fromARGB(255, 123, 123, 123);
 
@@ -19,7 +19,6 @@ class AppTheme {
     fontSize: 22,
     fontWeight: FontWeight.bold,
   );
-
   static const appBarColorTitle = TextStyle(
     color: primaryColor,
     fontSize: 24,
@@ -29,11 +28,14 @@ class AppTheme {
     color: smallTextColor,
     fontSize: 15,
   );
+  static const smallBlackText = TextStyle(
+    color: textColor,
+    fontSize: 15,
+  );
   static const meduimText = TextStyle(
     color: textColor,
     fontSize: 22,
   );
-
   static const priceTextMain = TextStyle(
     color: tertiaryColor,
     fontWeight: FontWeight.bold,
@@ -43,5 +45,14 @@ class AppTheme {
     color: tertiaryColor,
     fontWeight: FontWeight.bold,
     fontSize: 22,
+  );
+  static const buttonthememedium = TextStyle(
+    color: backgroundColor,
+    fontSize: 22,
+  );
+  static const buttonthemesmall = TextStyle(
+    fontSize: 16,
+    color: backgroundColor,
+    fontWeight: FontWeight.bold,
   );
 }

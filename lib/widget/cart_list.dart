@@ -68,6 +68,7 @@ class Cartlist extends StatelessWidget {
                     description: item['description'],
                     price: item['price'].toDouble(),
                     shortDescription: item['shortDescription'],
+                    longDescription: item['longDescription'],
                   ),
                 ),
               );

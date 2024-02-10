@@ -1,14 +1,15 @@
-import 'package:apppizza/constants/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:iconsax/iconsax.dart';
+import '../widget/widgets/rating.dart';
+import '../constants/app_theme.dart';
 
-class DetailsPage extends StatelessWidget {
+class DetailsPage extends StatefulWidget {
   final String name;
   final String image;
   final String description;
   final double price;
   final String shortDescription;
+  final String longDescription;
 
   const DetailsPage({
     Key? key,
@@ -17,7 +18,15 @@ class DetailsPage extends StatelessWidget {
     required this.description,
     required this.price,
     required this.shortDescription,
+    required this.longDescription,
   }) : super(key: key);
+
+  @override
+  State<DetailsPage> createState() => _DetailsPageState();
+}
+
+class _DetailsPageState extends State<DetailsPage> {
+  bool _showFullDescription = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +41,7 @@ class DetailsPage extends StatelessWidget {
                 debugPrint('Search');
               },
               icon: const Icon(
-                Iconsax.shop,
+                Icons.search,
                 size: 25,
                 color: textColor,
               ),
@@ -44,114 +53,157 @@ class DetailsPage extends StatelessWidget {
         children: [
           Expanded(
             flex: 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40), // Rounded corners
-                color: secondaryColor,
-              ),
-              child: ClipRRect(
-                // ClipRRect to clip the image to rounded corners
-                borderRadius: BorderRadius.circular(40),
-                child: Image.asset(
-                  'assets/images/9.jpeg',
-                  fit: BoxFit.cover, // Ensure the image covers the entire space
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: secondaryColor,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.asset(
+                    widget.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
           ),
-          const Gap(20),
+          const Gap(10),
           Expanded(
             flex: 6,
-            child: Container(
-                child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 30.0, vertical: 20.0),
-                  child: Container(
-                    height: 150,
-                    width: double.infinity,
-                    decoration: const BoxDecoration(
-                      color: secondaryColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30.0, vertical: 20.0),
+                    child: Container(
+                      height: 140,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: textColor, width: 0.2),
+                        color: secondaryColor,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30.0, vertical: 10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  widget.name,
+                                  style: AppTheme.appBarBlackTitleDetail,
+                                ),
+                                Text(
+                                  '\$${widget.price.toStringAsFixed(2)}',
+                                  style: AppTheme.priceTextDetail,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30.0, vertical: 0.0),
+                            child: Text(
+                              widget.shortDescription,
+                              style: AppTheme.smallText,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 30.0, vertical: 6.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const RatingWidget(),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: secondaryColor,
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                        color: textColor,
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    debugPrint('Add to cart');
+                                  },
+                                  child: const Text(
+                                    'Add to cart',
+                                    style: AppTheme.smallBlackText,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+                  ),
+                  const Gap(8),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                name,
-                                style: AppTheme.appBarBlackTitleDetail,
-                              ),
-                              Text(
-                                '\$${price.toStringAsFixed(2)}',
-                                style: AppTheme.priceTextDetail,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 8, 20, 0),
+                        const Text('Description',
+                            style: AppTheme.appBarBlackTitle),
+                        const Gap(10),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _showFullDescription = !_showFullDescription;
+                            });
+                          },
                           child: Text(
-                            shortDescription,
-                            style: AppTheme.smallText,
+                            _showFullDescription
+                                ? widget.longDescription
+                                : '${widget.longDescription.substring(0, 150)}... Read more',
+                            style: const TextStyle(fontSize: 16),
                           ),
                         ),
                       ],
                     ),
                   ),
-                )
-              ],
-            )),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 20.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        debugPrint('Order now');
+                      },
+                      child: Container(
+                        height: 80,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: textColor,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Order now',
+                            style: AppTheme.buttonthememedium,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           )
         ],
       ),
     );
   }
 }
-
-
-// class DetailsPage extends StatelessWidget {
-  
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(name),
-//       ),
-//       body: Column(
-//         crossAxisAlignment: CrossAxisAlignment.stretch,
-//         children: [
-//           Image.asset(image),
-//           SizedBox(height: 16),
-//           Padding(
-//             padding: const EdgeInsets.all(16.0),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   name,
-//                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-//                 ),
-//                 SizedBox(height: 8),
-//                 Text(description),
-//                 SizedBox(height: 16),
-//                 Text(
-//                   'Price: \$${price.toStringAsFixed(2)}',
-//                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

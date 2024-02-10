@@ -6,7 +6,8 @@
         "image": "assets/images/pizza2.1.jpeg",
         "description": "Classic Italian pizza topped with tomato sauce, fresh mozzarella cheese, and basil leaves.",
         "shortDescription": "with Cheese",
-        "price": 10.99
+        "price": 10.99,
+        "longDescription": "The Margherita pizza is a classic Italian pizza that is simple yet delicious. It is topped with a light tomato sauce, fresh mozzarella cheese, and fresh basil leaves. The simplicity of the ingredients allows the flavors to shine through, making it a favorite among pizza lovers. Whether you are a fan of traditional Italian cuisine or just looking for a light and flavorful pizza option, the Margherita pizza is sure to satisfy your cravings."
     },
     {
         "productId": 2,
@@ -15,7 +16,8 @@
         "image": "assets/images/8.jpeg",
         "description": "Traditional pizza topped with spicy pepperoni slices and melted cheese.",
         "shortDescription": "with Mushrooms",
-        "price": 12.99
+        "price": 12.99,
+        "longDescription": "The Pepperoni pizza is a classic favorite that is sure to satisfy your cravings. It is topped with spicy pepperoni slices and melted cheese, creating a perfect combination of flavors and textures. Whether you are enjoying it as a quick lunch or a late-night snack, the Pepperoni pizza is a delicious and satisfying option that is sure to hit the spot."
     },
     {
         "productId": 3,
@@ -24,7 +26,8 @@
         "image": "assets/images/6.jpeg",
         "description": "A colorful combination of fresh vegetables including bell peppers, onions, olives, and tomatoes atop a cheesy base.",
         "shortDescription": "with Veggies",
-        "price": 11.99
+        "price": 11.99,
+        "longDescription": "The Vegetarian pizza is a colorful and flavorful option that is perfect for those looking for a lighter and healthier pizza choice. It is topped with a variety of fresh vegetables including bell peppers, onions, olives, and tomatoes, creating a beautiful and vibrant combination of flavors and textures. Whether you are a vegetarian or just looking for a delicious and satisfying pizza option, the Vegetarian pizza is sure to hit the spot."
     },
     {
         "productId": 4,
@@ -32,7 +35,8 @@
         "isVeg": false,
         "image": "https://example.com/hawaiian.jpg",
         "description": "A controversial yet beloved combination of ham, pineapple, and cheese on a thin crust.",
-        "price": 13.49
+        "price": 13.49,
+        "longDescription": "The Hawaiian pizza is a controversial yet beloved option that is sure to satisfy your cravings. It is topped with a combination of ham, pineapple, and cheese, creating a unique and flavorful combination of sweet and savory flavors. Whether you are a fan of the classic Hawaiian pizza or just looking to try something new, this option is sure to hit the spot."
     },
     {
         "productId": 5,
@@ -40,7 +44,8 @@
         "isVeg": false,
         "image": "https://example.com/bbq-chicken.jpg",
         "description": "Tender grilled chicken pieces marinated in barbecue sauce, topped with red onions, and smothered in melted cheese.",
-        "price": 14.99
+        "price": 14.99,
+        "longDescription": "The BBQ Chicken pizza is a flavorful and satisfying option that is sure to hit the spot. It is topped with tender grilled chicken pieces marinated in barbecue sauce, red onions, and melted cheese, creating a perfect combination of sweet and savory flavors. Whether you are a fan of barbecue chicken or just looking for a delicious and satisfying pizza option, this choice is sure to satisfy your cravings."
     },
     {
         "productId": 6,
@@ -48,7 +53,8 @@
         "isVeg": true,
         "image": "https://example.com/mushroom.jpg",
         "description": "Sliced mushrooms sautéed in garlic butter and herbs, generously spread over a cheesy base.",
-        "price": 11.49
+        "price": 11.49,
+        "longDescription": "The Mushroom pizza is a flavorful and satisfying option that is perfect for mushroom lovers. It is topped with sliced mushrooms sautéed in garlic butter and herbs, creating a rich and savory combination of flavors. Whether you are a fan of mushrooms or just looking for a delicious and satisfying pizza option, this choice is sure to hit the spot."
     },
     {
         "productId": 7,
@@ -56,7 +62,8 @@
         "isVeg": true,
         "image": "https://example.com/four-cheese.jpg",
         "description": "A cheese lover's dream featuring a blend of mozzarella, cheddar, parmesan, and gorgonzola cheeses atop a crispy crust.",
-        "price": 13.99
+        "price": 13.99,
+        "longDescription": "The Four Cheese pizza is a cheese lover's dream come true. It is topped with a blend of mozzarella, cheddar, parmesan, and gorgonzola cheeses, creating a rich and flavorful combination of flavors. Whether you are a fan of traditional Italian cuisine or just looking for a delicious and satisfying pizza option, this choice is sure to satisfy your cravings."
     },
     {
         "productId": 8,
@@ -64,7 +71,8 @@
         "isVeg": false,
         "image": "https://example.com/meat-lovers.jpg",
         "description": "Packed with a hearty assortment of meat toppings including pepperoni, sausage, ham, and bacon.",
-        "price": 15.49
+        "price": 15.49,
+        "longDescription": "The Meat Lover's pizza is a hearty and satisfying option that is perfect for meat lovers. It is packed with a hearty assortment of meat toppings including pepperoni, sausage, ham, and bacon, creating a rich and flavorful combination of flavors. Whether you are a fan of meaty pizzas or just looking for a delicious and satisfying option, this choice is sure to hit the spot."
     },
     {
         "productId": 9,
@@ -72,7 +80,8 @@
         "isVeg": true,
         "image": "https://example.com/spinach-feta.jpg",
         "description": "A light and flavorful option featuring sautéed spinach, tangy feta cheese, and a hint of garlic.",
-        "price": 12.49
+        "price": 12.49,
+        "longDescription": "The Spinach and Feta pizza is a light and flavorful option that is perfect for those looking for a healthier pizza choice. It is topped with sautéed spinach, tangy feta cheese, and a hint of garlic, creating a delicious and satisfying combination of flavors. Whether you are a fan of vegetarian pizzas or just looking for a delicious and satisfying option, this choice is sure to hit the spot."
     },
     {
         "productId": 10,
@@ -80,6 +89,7 @@
         "isVeg": false,
         "image": "https://example.com/buffalo-chicken.jpg",
         "description": "Spicy buffalo chicken pieces combined with creamy ranch dressing and melted cheese on a crispy crust.",
-        "price": 14.99
+        "price": 14.99,
+        "longDescription": "The Buffalo Chicken pizza is a spicy and satisfying option that is perfect for those who love a little heat. It is topped with spicy buffalo chicken pieces, creamy ranch dressing, and melted cheese, creating a perfect combination of spicy and savory flavors. Whether you are a fan of buffalo chicken or just looking for a delicious and satisfying pizza option, this choice is sure to satisfy your cravings."
     }
 ]
