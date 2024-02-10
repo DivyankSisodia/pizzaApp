@@ -74,7 +74,7 @@ class CardList extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('\$$price', style: AppTheme.appBarBlackTitle),
+                  Text('\$$price', style: AppTheme.priceTextMain),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Iconsax.add_circle),

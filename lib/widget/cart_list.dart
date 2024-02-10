@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:apppizza/widget/widgets/card_list.dart';
 import 'package:flutter/material.dart';
 
+import '../view/detail_page.dart';
+
 class Cartlist extends StatelessWidget {
   const Cartlist({
     super.key,
@@ -55,11 +57,27 @@ class Cartlist extends StatelessWidget {
           String firstLine = nameParts[0]; // First word
           String secondLine = nameParts.sublist(1).join(' '); // Remaining words
           // Create a CardList widget with data from the item
-          return CardList(
-            price: item['price'].toDouble(),
-            img: item['image'],
-            title: '$firstLine\n$secondLine',
-            subtitle: item['description'],
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsPage(
+                    name: item['name'],
+                    image: item['image'],
+                    description: item['description'],
+                    price: item['price'].toDouble(),
+                    shortDescription: item['shortDescription'],
+                  ),
+                ),
+              );
+            },
+            child: CardList(
+              price: item['price'].toDouble(),
+              img: item['image'],
+              title: '$secondLine\n$firstLine',
+              subtitle: item['shortDescription'],
+            ),
           );
         },
       ),

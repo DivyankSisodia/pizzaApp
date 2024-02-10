@@ -4,7 +4,8 @@
         "name": "Margherita Pizza",
         "isVeg": true,
         "image": "assets/images/pizza2.1.jpeg",
-        "description": "with cheese",
+        "description": "Classic Italian pizza topped with tomato sauce, fresh mozzarella cheese, and basil leaves.",
+        "shortDescription": "with Cheese",
         "price": 10.99
     },
     {
@@ -12,7 +13,8 @@
         "name": "Pepperoni Pizza",
         "isVeg": false,
         "image": "assets/images/8.jpeg",
-        "description": "with mushrooms",
+        "description": "Traditional pizza topped with spicy pepperoni slices and melted cheese.",
+        "shortDescription": "with Mushrooms",
         "price": 12.99
     },
     {
@@ -20,7 +22,8 @@
         "name": "Vegetarian Pizza",
         "isVeg": true,
         "image": "assets/images/6.jpeg",
-        "description": "with veggies",
+        "description": "A colorful combination of fresh vegetables including bell peppers, onions, olives, and tomatoes atop a cheesy base.",
+        "shortDescription": "with Veggies",
         "price": 11.99
     },
     {

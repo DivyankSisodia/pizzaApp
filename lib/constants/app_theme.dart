@@ -13,9 +13,35 @@ class AppTheme {
     fontSize: 28,
     fontWeight: FontWeight.bold,
   );
+
+  static const appBarBlackTitleDetail = TextStyle(
+    color: textColor,
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+  );
+
   static const appBarColorTitle = TextStyle(
     color: primaryColor,
     fontSize: 24,
     fontWeight: FontWeight.bold,
+  );
+  static const smallText = TextStyle(
+    color: smallTextColor,
+    fontSize: 15,
+  );
+  static const meduimText = TextStyle(
+    color: textColor,
+    fontSize: 22,
+  );
+
+  static const priceTextMain = TextStyle(
+    color: tertiaryColor,
+    fontWeight: FontWeight.bold,
+    fontSize: 28,
+  );
+  static const priceTextDetail = TextStyle(
+    color: tertiaryColor,
+    fontWeight: FontWeight.bold,
+    fontSize: 22,
   );
 }

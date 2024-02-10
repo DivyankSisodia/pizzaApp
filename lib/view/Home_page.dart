@@ -1,14 +1,11 @@
 // ignore_for_file: file_names
 import 'dart:convert';
-import 'dart:math';
-
 import 'package:apppizza/constants/app_theme.dart';
 import 'package:apppizza/widget/cart_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import '../widget/bottom_nav.dart';
-import '../widget/widgets/card_list.dart';
 import '../widget/categories.dart';
 import '../widget/widgets/search_field.dart';
 
